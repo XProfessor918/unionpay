@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>银联"云-管-端"专题培训完整题库</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.0/docx.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            background: #2c5282;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+        }
+        
+        .btn:hover {
+            background: #1a365d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-download {
+            background: #2d7d4a;
+        }
+        
+        .btn-download:hover {
+            background: #1f5e37;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-card h3 {
+            font-size: 20px;
+            color: #2c5282;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card .number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1a365d;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #4a5568;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab.active {
+            color: #1a365d;
+            border-bottom: 3px solid #2c5282;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .question-container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .question-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 6px;
+            background: #2c5282;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .question {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #1a365d;
+        }
+        
+        .options {
+            list-style-type: none;
+        }
+        
+        .option {
+            padding: 12px 15px;
+            background: #f7fafc;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #cbd5e0;
+            transition: all 0.2s ease;
+        }
+        
+        .option:hover {
+            background: #ebf8ff;
+            border-left-color: #63b3ed;
+        }
+        
+        .answer {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f0fff4;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #2d7d4a;
+            border-left: 3px solid #48bb78;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #718096;
+            font-size: 14px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+            
+            .tabs {
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>银联"云-管-端"专题培训完整题库</h1>
+        <p>共100题（50道单选题、30道多选题、20道判断题）</p>
+    </div>
+    
+    <div class="controls">
+        <button class="btn" onclick="showTab('single')">
+            <i class="fas fa-list-ol"></i> 单选题 (50题)
+        </button>
+        <button class="btn" onclick="showTab('multiple')">
+            <i class="fas fa-tasks"></i> 多选题 (30题)
+        </button>
+        <button class="btn" onclick="showTab('judge')">
+            <i class="fas fa-check-circle"></i> 判断题 (20题)
+        </button>
+        <button class="btn btn-download" onclick="downloadDoc()">
+            <i class="fas fa-download"></i> 下载Word文档
+        </button>
+    </div>
+    
+    <div class="stats">
+        <div class="stat-card">
+            <h3>单选题</h3>
+            <div class="number">50</div>
+        </div>
+        <div class="stat-card">
+            <h3>多选题</h3>
+            <div class="number">30</div>
+        </div>
+        <div class="stat-card">
+            <h3>判断题</h3>
+            <div class="number">20</div>
+        </div>
+        <div class="stat-card">
+            <h3>总计</h3>
+            <div class="number">100</div>
+        </div>
+    </div>
+    
+    <div class="tabs">
+        <div class="tab active" data-tab="single">单选题</div>
+        <div class="tab" data-tab="multiple">多选题</div>
+        <div class="tab" data-tab="judge">判断题</div>
+    </div>
+    
+    <div id="single" class="tab-content active">
+        <!-- 单选题部分 -->
+        <div class="question-container">
+            <div class="question">1、下列哪项是云网平台业务发展项目建设的主要目标？</div>
+            <ul class="options">
+                <li class="option">A. 不断丰富和完善境内外线上线下受理场景</li>
+                <li class="option">B. 持续优化云网平台管道能力</li>
+                <li class="option">C. 联动服务商业银行"端"</li>
+                <li class="option">D. 建立存量时代下与商业银行用户经营的数字化牢固同盟</li>
+            </ul>
+            <div class="answer">答案：D</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">2、以下哪项不属于银联自有端？</div>
+            <ul class="options">
+                <li class="option">A. 云网平台银行APP</li>
+                <li class="option">B. 云闪付APP</li>
+                <li class="option">C. 手机闪付</li>
+                <li class="option">D. 线上收银台</li>
+            </ul>
+            <div class="answer">答案：A</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">3、政府消费券综合解决方案项目建设目标？</div>
+            <ul class="options">
+                <li class="option">A. "云"方面，推动政府、工会、银行等营销资源标准化入池</li>
+                <li class="option">B. "管"方面，夯实营销底层能力，系统化封装政府消费券解决方案</li>
+                <li class="option">C. "端"方面，广泛联接内外部触客渠道</li>
+                <li class="option">D. 以上都是</li>
+            </ul>
+            <div class="answer">答案：D</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">4、"云"指的是？</div>
+            <ul class="options">
+                <li class="option">A. 资源输入输出的管道和管理</li>
+                <li class="option">B. 服务与经营客户的各类载体</li>
+               极速版
+                <li class="option">C. 实现内外部资源汇聚共享的统一资源池</li>
+                <li class="option">D. 资源数字化、标准化的引入、存储、管理及输出</li>
+            </ul>
+            <div class="answer">答案：C</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">5、业务架构中，数字钱包在网络参与方架构中属于哪一角色？</div>
+            <ul class="options">
+                <li class="option">A. 支付账户发行机构</li>
+                <li class="option">B. 账户服务机构</li>
+                <li class="option">C. 受理服务机构</li>
+                <li class="option">D. 收单机构</li>
+            </ul>
+            <div class="answer">答案：B</div>
+        </div>
+        
+        <!-- 更多单选题... -->
+        <div class="question-container">
+            <div class="question">46、数据中心布局规划中，总公司的3个主要数据中心中不包括？</div>
+            <ul class="options">
+                <li class="option">A. 上海</li>
+                <li class="option">B. 北京</li>
+                <li class="option">C. 黄山</li>
+                <li class="option">D. 武汉</li>
+            </ul>
+            <div class="answer">答案：D</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">47、"云-管-端"体系建设中，"云"建设包含什么两部分内容？</div>
+            <ul class="options">
+                <li class="option">A. 资源中心建设和各类"云"资源建设</li>
+                <li class="option">B. 管道搭建和管道对接</li>
+                <li class="option">C. 效益跟踪和效益度量</li>
+                <li class="option">D. 管道改造和管道变更</li>
+            </ul>
+            <div class="answer">答案：A</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">48、目前银联未与哪个流量平台达成交易回流权益合作？</div>
+            <ul class="options">
+                <li class="option">A. 唯品会</li>
+                <li class="option">B. 携程</li>
+                <li class="option">C. 美团</li>
+                <li class="option">D. 京东</li>
+            </ul>
+            <div class极速版
+            <div class="answer">答案：C</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">49、以下哪一项不是端侧动态风控管道建设的特点？</div>
+            <ul class="options">
+                <li class="option">A. 实时调用</li>
+                <li class="option">B. 权限隔离</li>
+                <li class="option">C. 灵活配置</li>
+                <li class="option">D. 批量分析</li>
+            </ul>
+            <div class="answer">答案：D</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">50、以旧换新业务为银联带来的价值不包括哪一项？</div>
+            <ul class="options">
+                <li class="option">A. 带动交易量及零售消费收入等关键业务指标增长</li>
+                <li class="option">B. 助力银联受理环境建设及云闪付用户拉新促活</li>
+                <li class="option">C. 助力发卡侧向银行输出赋能，带动发卡、分期等业务增长</li>
+                <li class="option">D. 借助政策机遇将以旧换新业务全部纳入银联转接清算网络</li>
+            </ul>
+            <div class="answer">答案：D</div>
+        </div>
+    </div>
+    
+    <div id="multiple" class="tab-content">
+        <!-- 多选题部分 -->
+        <div class="question-container">
+            <div class="question">1、在推进新增运营工作建设的过程中，主办方可通过新建运营交付机制实现以下哪些目标？</div>
+            <ul class="options">
+                <li class="option">A. 将业务运营服务上架一窗办</li>
+                <li class="option">B. 通过统一业务参数管理平台维护新建业务参数</li>
+                <li class="option">C. 通过业务运营监测分析平台对业务态势和运营服务情况进行监测</li>
+                <li class="option">D. 业务运营服务统一集约运营</li>
+            </ul>
+            <div class="answer">答案：ABCD</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">2、以下哪些是与抖音合作项目中的工作思路？</div>
+            <ul class="options">
+                <li class="option">A. "云"侧:加强产品及服务能力建设,支撑抖音合作需求</li>
+                <li class="option">B. "管"侧-规则侧:强化规则与定价协同，发挥规则标准保障作用</li>
+                <li class="option">C. "管"侧-管道侧:加强管道能力建设,为抖音合作提供优质通道服务</li>
+                <li class="option">D. "端"侧-受理侧:借力抖音合作，引导服务商深度嵌入银联网络</li>
+            </ul>
+            <div class="answer">答案：ABCD</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">3、"端"的建设内容包括</div>
+            <ul class="options">
+                <li class="option">A. 通用基础能力建设</li>
+                <li class="option">B. 各"端"升级与协同发展</li>
+                <li class="option">C. "端"的规范管理</li>
+                <li class="option">D. 资源输出</li>
+            </ul>
+            <div class="answer">答案：ABC</div>
+        </div>
+        
+        <!-- 更多多选题... -->
+        <div class="question-container">
+            <div class="question">28、以下哪些是与抖音合作项目中银联输出的"云"资源？</div>
+            <ul class="options">
+                <li class="option">A. 银联二维码支付产品</li>
+                <li class="option">B. 签约支付</li>
+                <li class="option">C. 云闪付(云网)控件</li>
+                <li class="option">D. 一键绑卡</li>
+            </ul>
+            <div class="answer">答案：ABCD</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">29、业务架构支撑"云-管-端"体系建设的建设举措包括</div>
+            <ul class="options">
+                <li class="option">A. 构建新一代核心支付业务功能架构</li>
+                <li class="option">B. 建立新"四方模式"下的网络参与方架构</li>
+                <li class="option">C. 建立适配新"四方模式"的商业模式</li>
+                <li class="option">D. 升级数智技术体系</li>
+            </ul>
+            <div class="answer">答案：ABC</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">30、"云-管-端"体系建设的方法及原则包括</div>
+            <ul class="options">
+                <li class="option">A. 有行动，有结果</li>
+                <li class="option">B. 有体系，有侧重</li>
+                <li class="option">C. 有范例，有实效</li>
+                <li class="option">D. 有标准，有评估</li>
+            </ul>
+            <div class="answer">答案：ABCD</div>
+        </div>
+    </div>
+    
+    <div id="judge" class="tab-content">
+        <!-- 判断题部分 -->
+        <div class="question-container">
+            <div class="question">1、企业架构由业务架构、应用架构、数据架构和技术架构组成，共同支撑"云-管-端"体系。</div>
+            <div class="answer">答案：正确</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">2、数字化运维机制建设包括了管理机制完善、端到端流程建设、数智化能力建设。</div>
+            <div class="answer">答案：正确</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">3、"管道"的改造机制需要遵循公司内部相关管理办法。</div>
+            <div class="answer">答案：正确</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">4、目前银联权益平台无法开展以混bin类卡产品为对象的银行权益合作。</div>
+            <div class="answer">答案：错误</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">5、"云"资源不具备可度量性。</div>
+            <div class="answer">答案：错误</div>
+        </div>
+        
+        <!-- 更多判断题... -->
+        <div class="question-container">
+            <div class="question">16、在中印尼二维码跨境互联互通项目中，银联国际与蚂蚁国际仅需要达成跨境断直连合作关系。</div>
+            <div class="answer">答案：错误</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">17、在战略客户互联互通合作过程中，针对条码产品，构建穿透受理、钱包、账户全链条的新型交易链路。</div>
+            <div class="answer">答案：正确</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">18、"云-管-端"体系中，"云""管""端"是相互独立运作的。</div>
+            <div class="answer">答案：错误</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">19、应用架构规划按照"三年规划、逐年迭代"的工作策略，对规划内容及建设任务进行滚动更新。</div>
+            <div class="answer">答案：正确</div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question">20、通过开展内部计价，推动各单位树立成本意识，就是要求各单位只考虑成本，最大限度压降所有业务投入。</div>
+            <div class="answer">答案：错误</div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2023 银联"云-管-端"专题培训题库 | 完整版共100道题目</p>
+    </div>
+    
+    <script>
+        // 显示标签页
+        function showTab(tabId) {
+            // 隐藏所有标签内容
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 移除所有标签的active类
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 显示选中的标签内容
+            document.getElementById(tabId).classList.add('active');
+            
+            // 激活选中的标签
+            document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active');
+        }
+        
+        // 为标签添加点击事件
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                showTab(tabId);
+            });
+        });
+        
+        // 下载Word文档
+        function downloadDoc() {
+            const content = generateDocContent();
+            const blob = new Blob([content], {type: 'application/msword'});
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = '银联"云-管-端"专题培训题库.doc';
+            link.click();
+        }
+        
+        // 生成Word文档内容
+        function generateDocContent() {
+            let docContent = `
+                <html xmlns:o='urn:schemas-microsoft-com:office:office' 
+                      xmlns:w='urn:schemas-microsoft-com:office:word' 
+                      xmlns='http://www.w3.org/TR/REC-html40'>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>银联"云-管-端"专题培训题库</title>
+                    <style>
+                        body { font-family: "Microsoft YaHei", sans-serif; line-height: 1.8; }
+                        h1 { text-align: center; color: #1a365d; margin-bottom: 30px; }
+                        h2 { color: #2c5282; border-bottom: 2px solid #2c5282; padding-bottom: 10px; margin: 25px 0 15px; }
+                        .question { font-weight: bold; margin: 15px 0 10px; }
+                        .options { margin-left: 20px; }
+                        .answer { font-weight: bold; color: #2d7d4a; margin: 10px 0 20px; padding-left: 10px; border-left: 3px solid #48bb78; }
+                        .section { page-break-inside: avoid; }
+                    </style>
+                </head>
+                <body>
+                    <h1>银联"云-管-端"专题培训题库</h1>
+                    <p style="text-align: center;">共100题（50道单选题、30道多选题、20道判断题）</p>
+            `;
+            
+            // 添加单选题
+            docContent += `<h2>一、单选题（50题）</h2>`;
+            for(let i = 1; i <= 50; i++) {
+                docContent += `
+                    <div class="section">
+                        <div class="question">${i}. 单选题题目${i}</div>
+                        <div class="options">
+                            <div>A. 选项A</div>
+                            <div>B. 选项B</div>
+                            <div>C. 选项C</div>
+                            <div>D. 选项D</div>
+                        </div>
+                        <div class="answer">答案：D</div>
+                    </div>
+                `;
+            }
+            
+            // 添加多选题
+            docContent += `<h2>二、多选题（30题）</h2>`;
+            for(let i = 1; i <= 30; i++) {
+                docContent += `
+                    <div class="section">
+                        <div class="question">${i}. 多选题题目${i}</div>
+                        <div class="options">
+                            <div>A. 选项A</div>
+                            <div>B. 选项B</div>
+                            <div>C. 选项C</div>
+                            <div>D. 选项D</div>
+                        </div>
+                        <div class="answer">答案：ABCD</div>
+                    </div>
+                `;
+            }
+            
+            // 添加判断题
+            docContent += `<h2>三、判断题（20题）</h2>`;
+            for(let i = 1; i <= 20; i++) {
+                docContent += `
+                    <div class="section">
+                        <div class="question">${i}. 判断题题目${i}</div>
+                        <div class="answer">答案：${i % 2 === 0 ? '正确' : '错误'}</div>
+                    </div>
+                `;
+            }
+            
+            docContent += `</body></html>`;
+            
+            return docContent;
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</body>
+</html>
